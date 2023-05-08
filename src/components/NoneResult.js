@@ -12,8 +12,6 @@ function NoneResult(){
                     </h3>
                 </div>
             </div>
-
-
 }
 
 export default NoneResult;

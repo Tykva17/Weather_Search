@@ -1,8 +1,8 @@
 import baseUrl from "./baseInfo";
+import sendRequest from "./sendRequest";
+function PopularList({ cityName, getResult }){
 
-function PopularList({ cityName, sendRequest, getResult }){
-
-    const handleClickPC = (e) => {
+    const searchPopularCity = (e) => {
         let serachUrl = `${baseUrl}&q=${e.currentTarget.innerText}&lang=uk`;
         sendRequest(serachUrl)
             .then(
@@ -10,11 +10,10 @@ function PopularList({ cityName, sendRequest, getResult }){
                     getResult(data);
                 }
             )
-            .catch( data => console.log(data))
+            .catch( data => console.error(data))
     }
 
-    return <p className='popular_city-item w-75 btn btn-outline-dark' onClick={handleClickPC}>{cityName}</p>;
+    return <p className='popular_city-item w-75 btn btn-outline-dark' onClick={searchPopularCity}>{cityName}</p>;
 
 }
-
 export default PopularList;

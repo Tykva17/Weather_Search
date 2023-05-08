@@ -1,6 +1,4 @@
 function SearchResult({cityData}) {
-
-    console.log(cityData)
     return <div className='special_card'>
         <div className='main_area m-2 info_card d-flex flex-column align-items-center p-2 shadow rounded'>
             <h1>{cityData.location.name}</h1>
